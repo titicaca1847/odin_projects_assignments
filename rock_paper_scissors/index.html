@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Rock Paper Scissors</title>
+        <meta char="UTF-8">
+    </head>
+    <body>
+        <h1>Rock Paper Scissors</h1>
+        <script>
+            function computerPlay(){   //return a random hand
+                let hands=['rock', 'paper', 'scissors'];
+                return hands[Math.floor(Math.random()*hands.length)];
+            }
+
+            //console.log(computerPlay());
+
+            function playAround(computerSelection, playerSelection){
+                let computer=computerSelection.toLowerCase();
+                let player=playerSelection.toLowerCase();
+                
+                if (player==computer) {
+                    return("You draw with "+player +"!");
+                }else if (player=="rock"&&computer=="scissors"){
+                    return ("You win! Rock beats scissors!");
+                } else if(player=="rock"&&computer=="paper"){
+                    return ("You lose! Paper beats rock!");
+                } else if(player=="scissors" &&computer=="paper"){
+                    return ("You win! Scissors beats paper!");
+                } else if(player=="scissors"&& computer=="rock"){
+                    return ("You lose! Rock beats scissors!");
+                } else if(player=="paper"&& computer=="rock"){
+                    return ("You win! Paper beats rock!");
+                } else if (player=="paper"&&computer=="scissors") {
+                    return ("You lose! Scissors beats paper!")
+                }
+            }
+
+               
+            function game(){
+                for (let i=1;i<6;i++){
+                    let playerInput=prompt("Please enter rock, scissors or paper","").toLowerCase();
+                     
+                     //check if the input is valid.Otherwise, ask the user to input again.
+                    while (playerInput!=="rock"&&playerInput!=="scissors"&&playerInput!=="paper"){
+                       playerInput=prompt("You have enter an invalid word. PLease enter rock, scissors or paper.").toLowerCase();
+                    } 
+                    
+                    alert(playAround(computerPlay(), playerInput));
+                }
+            }
+            game();
+
+    
+
+            //const playerSelection="scissors";
+            //console.log(playAround(computerPlay(),playerSelection));
+
+
+        </script>
+    </body>
+</html>
