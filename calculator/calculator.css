@@ -1,0 +1,50 @@
+h1{
+    text-align: center;
+}
+
+.container{
+    
+    width:800px;
+    height:800px;
+    display:grid; 
+      
+    grid-template-columns:repeat(5,1fr);
+    grid-template-rows:repeat(5,1fr); 
+    font-style:bold;
+    border: 4px solid rgb(134, 97, 238);
+  
+    
+}
+
+button{
+
+    font-size:35px;
+    color:orangered;
+    background-color:rgb(59, 56, 56);
+    border: 1px solid rgb(241, 241, 191);
+    font-weight: 900;
+}
+
+#display{
+    font-size:50px;
+    color: black;
+    text-align:right;
+    grid-column-start:1;
+    grid-column-end:6;
+    background-color: beige;
+ 
+}
+
+#clear{
+    grid-row-start:2;
+    grid-row-end:4;
+    grid-column-start:5;
+    grid-column-end:6;
+}
+
+#backspace{
+    grid-row-start:4;
+    grid-row-end:6;
+    grid-column-start:5;
+    grid-column-end:6;
+}
